@@ -1,8 +1,24 @@
-<h1>My movie lists</h1>
-<ul>
-  <li><% @lists.each do |list| %>
-  <%= link_to list.name, list_path(list) %></li>
-  <% end %>
-</ul>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/39a8cbac-e7be-4ad5-8ad8-f45297a07279/a8118e48-8400-48c6-bffe-87ea7605b098.png)">
+  <h1>My movie lists</h1>
+</div>
 
-<%= link_to "Create a movie list", new_list_path, class:"btn btn-primary" %>
+<div class="p-4">
+
+<div class="p-4 d-flex justify-content-end">
+  <%= link_to " + create a movie list", new_list_path, class:"btn btn-primary" %>
+</div>
+
+
+<div class="cards">
+  <% @lists.each do |list| %>
+        <%= link_to list_path(list), class:"btn btn-style-none text-bold" do %>
+      <div class="card-category text-center" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(https://media.istockphoto.com/id/484126086/photo/old-blank-ticket.jpg?s=612x612&w=0&k=20&c=iUMDnxVKyRNgHb8a2zeNmEYQE5DZVpuKyJ8ZAv2BWpY=)">
+      <p>
+      <%= list.name %>
+      </p>
+    </div>
+      <% end %>
+    <% end %>
+</div>
+
+</div>
